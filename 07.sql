@@ -91,42 +91,42 @@ ON m1.manager_id=m2.id;
 --ALTER TABLE command is used to add or delete constraints or update the data type of a field in an existing table
 
 
---1)How to add a column to an existing table
+--1)How to add a column to an existing table----
 ALTER TABLE my_companies
 ADD company_address TEXT;
 
 
---2) How to add a field with default value
+--2) How to add a field with default value----
 
 ALTER TABLE workers
 ADD worker_address VARCHAR(80) DEFAULT 'Miami, FL, US';
 
---3) How to add multiple fields into a table
+--3) How to add multiple fields into a table---
 ALTER TABLE workers
 ADD number_of_workers SMALLINT DEFAULT 0, 
 ADD name_of_CEO VARCHAR;
 
---4)How to drop feilds from a table
+--4)How to drop feilds from a table----
 ALTER TABLE workers
 DROP COLUMN name_of_ceo;
 
---5)How to rename a field in an existing table
+--5)How to rename a field in an existing table----
 ALTER TABLE workers
 RENAME COLUMN worker_address TO company_profession;
 
---6)How to rename an existing table
+--6)How to rename an existing table----
 ALTER TABLE workers
 RENAME TO employees;
 
---7)How to modify(Add constraint, change data type or change the size) of a field
+--7)How to modify(Add constraint, change data type or change the size) of a field----
 --NOTE: Be careful about the existing data in a field when you need to add a constraint for it. 
 
---How to add a constraint into a field
+--How to add a constraint into a field----
 --Add "NOT NULL" constraint for number_of_workers
 ALTER TABLE employees
 ALTER COLUMN number_of_workers SET NOT NULL;
 
---How to add UNIQUE constraint
+--How to add UNIQUE constraint---
 --Add UNIQUE constraint for id
 ALTER TABLE employees
 ADD CONSTRAINT id_unique UNIQUE(id);
