@@ -224,11 +224,3 @@ WHERE EXISTS (SELECT product_id FROM customers_likes WHERE product_id='60');
 UPDATE customers_likes
 SET customer_name='No name'
 WHERE customer_name='Lary';
-
-
-
-
---.Find the 3.highest salary--
---Find the company name, number of employees and average salary for every company--
---If the customer_name field has "Lary" among the customer_name field, update all customer_name field as "No Name".--
---If Lary exists in customer name then update it with 'No Name'--
